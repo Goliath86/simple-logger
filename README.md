@@ -46,3 +46,5 @@ this.$logger.saveToLog('anotherLogFile.txt', 'This is another log file');
 then in your `logsPath` directory you will find two files named `aLogFile.txt` and `anotherLogFile.txt`
 
 During the logging if one or more files reach the `maxFileDimension` specified on plugin intialization, then the plugin provides to overwrite old data.
+
+The `saveToLog` function will return a boolean value `true` if the write operations are successful otherwise will return the boolean value `false`.
