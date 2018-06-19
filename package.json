@@ -1,8 +1,8 @@
 {
   "name": "vuejs-text-logger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple text logger for Node.js and Vue.js 2.x",
-  "main": "logger.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
