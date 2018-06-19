@@ -1,8 +1,8 @@
 /*
- * simple-logger plugin for Vue.js 2.x
+ * vuejs-text-logger plugin for Vue.js 2.x
  */
 
-export default {
+module.exports = {
   install: (Vue, options) => {
     Vue.prototype.$logger = {
       saveToLog(fileName, data) {
