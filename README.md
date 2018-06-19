@@ -5,13 +5,13 @@ A very simple logger plugin for Node.js and Vue.js 2.x
 
 With this plugin you can log to a text file all the logs informations that you want as strings, line by line. It is possible to specify a file name, a file path and the maximum size of the log file. If the maximum size of the file is reached, old data will be overwritten with new ones.
 
-## Installation by npm:
+## Installation
 
 ```npm
 npm install vuejs-text-logger
 ```
 
-## Usage:
+## Usage
 On your main.js file of your Vue project, write these lines:
 
 ```js
@@ -19,7 +19,7 @@ import logger from 'vuejs-text-logger'
 
 Vue.use(logger, options);
 ```
-where options is an object:
+where `options` is an object:
 
 ```js
 options: {
@@ -35,4 +35,11 @@ then in your project you can use it as:
 this.$logger.saveToLog(fileName, data)
 ```
 
-where 'filename' is a string containing the log's filename and data is a string containing every kind of data to be written inside the log file.
+where `filename` is a string containing the log's filename and `data` is a string containing every kind of data to be written inside the log file.
+
+You can save your logs'data in more than one log file using this plugin by specifying different filenames to pass at the `saveToLog` function:
+
+```js
+this.$logger.saveToLog('aLogFile.txt', 'This is the a log file');
+this.$logger.saveToLog('anotherLogFile.txt', 'This is another log file');
+```
