@@ -40,6 +40,9 @@ where `filename` is a string containing the log's filename and `data` is a strin
 You can save your logs'data in more than one log file using this plugin by specifying different filenames to pass at the `saveToLog` function:
 
 ```js
-this.$logger.saveToLog('aLogFile.txt', 'This is the a log file');
+this.$logger.saveToLog('aLogFile.txt', 'This is a log file');
 this.$logger.saveToLog('anotherLogFile.txt', 'This is another log file');
 ```
+then in your `logsPath` directory you will find two files named `aLogFile.txt` and `anotherLogFile.txt`
+
+During the logging if one or more files reach the `maxFileDimension` specified on plugin intialization, then the plugin provides to overwrite old data.
