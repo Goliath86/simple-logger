@@ -1,0 +1,25 @@
+{
+  "name": "vuejs-text-logger",
+  "version": "0.0.1",
+  "description": "A simple text logger for Node.js and Vue.js 2.x",
+  "main": "logger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goliath86/vuejs-text-logger.git"
+  },
+  "keywords": [
+    "logger",
+    "text",
+    "vuejs",
+    "nodejs"
+  ],
+  "author": "Mattia Mazzon (http://www.mattiamazzon.it)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Goliath86/vuejs-text-logger/issues"
+  },
+  "homepage": "https://github.com/Goliath86/vuejs-text-logger#readme"
+}
