@@ -9,18 +9,19 @@ module.exports = {
         if (options.logs && options.logsPath !== '' && fileName !== '' && data !== '') {
           const file = options.logsPath + fileName;
           const fs = require('fs');
+          
+          // Compose the 'data' field
+          if (options.appendDate) {
+            const moment = require('moment');
+            data = `[${moment(new Date()).format('DD/MM/YYYY, HH:mm:ss')}] ${data}\r\n`;
+          } else {
+            data = `${data}\r\n`;
+          }          
 
           try {
             // Check if the directory exists otherwise create it
             if (!fs.existsSync(options.logsPath)) {
               fs.mkdirSync(options.logsPath);
-
-              if (options.appendDate) {
-                const moment = require('moment');
-                data = `[${moment(new Date()).format('DD/MM/YYYY, HH:mm:ss')}] ${data}\r\n`;
-              } else {
-                data = `${data}\r\n`;
-              }
 
               // Append the requested message to a new file
               fs.appendFileSync(file, data, 'utf-8');
@@ -44,10 +45,6 @@ module.exports = {
                   fs.writeFileSync(file, linesExceptFirst, 'utf-8');
                   return true;
                 });
-
-                // Append the requested message to the file
-                fs.appendFileSync(file, data, 'utf-8');
-                return true;
               }
             }
 
