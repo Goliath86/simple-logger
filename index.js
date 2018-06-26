@@ -7,9 +7,12 @@ module.exports = {
     Vue.prototype.$logger = {
       saveToLog(fileName, data) {
         if (options.logs && options.logsPath !== '' && fileName !== '' && data !== '') {
-          const file = options.logsPath + fileName;
           const fs = require('fs');
+          const path = require('path');
           
+          // Create the logs' path
+          const file = path.join(options.logsPath, fileName);
+
           // Compose the 'data' field
           if (options.appendDate) {
             const moment = require('moment');
