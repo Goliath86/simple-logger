@@ -1,6 +1,6 @@
 {
   "name": "vuejs-text-logger",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A simple text logger for Node.js and Vue.js 2.x",
   "main": "index.js",
   "scripts": {

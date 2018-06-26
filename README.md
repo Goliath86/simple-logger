@@ -25,6 +25,7 @@ where `options` is an object:
 options: {
   logs: true,             // A {boolean} value that indicates if logger must be turned on or off
   logsPath: '',           // A {string} file path where to save the log files
+  appendDate: false,	  // A {boolean} value that indicates if a date in a format `DD/MM/YYYY, HH:mm:ss` must be added in front of a log line
   maxFileDimension: 50    // An {integer} indicating the max files dimensions in Megabytes
 }
 ```
@@ -48,3 +49,5 @@ then in your `logsPath` directory you will find two files named `aLogFile.txt` a
 During the logging if one or more files reach the `maxFileDimension` specified on plugin intialization, then the plugin provides to overwrite old data.
 
 The `saveToLog` function will return a boolean value `true` if the write operations are successful otherwise will return the boolean value `false`.
+
+Line termination characters `\r\n` are added automatically at the end of a log line.

@@ -15,6 +15,13 @@ module.exports = {
             if (!fs.existsSync(options.logsPath)) {
               fs.mkdirSync(options.logsPath);
 
+              if (options.appendDate) {
+                const moment = require('moment');
+                data = `[${moment(new Date()).format('DD/MM/YYYY, HH:mm:ss')}] ${data}\r\n`;
+              } else {
+                data = `${data}\r\n`;
+              }
+
               // Append the requested message to a new file
               fs.appendFileSync(file, data, 'utf-8');
               return true;
